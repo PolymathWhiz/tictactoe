@@ -1,138 +1,148 @@
 <!doctype html>
 <html>
-<head>
-	<meta charset="UFT-8">
-	<title>Tic Tac Toe</title>
 
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<head>
+		<meta charset="UFT-8">
+		<title>Tic Tac Toe</title>
 
-	<link href='http://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet'>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	<script type="text/javascript" src="script.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<style>
+		<link href='http://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet'>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script type="text/javascript" src="script.js"></script>
 
-		html {
-			font-family: 'Raleway', sans-serif;
-			font-weight: 400;
-			font-size: 12px;
-		}
+		<style>
+			html {
+				font-family: 'Raleway', sans-serif;
+				font-weight: 400;
+				font-size: 12px;
+			}
 
-		.container {
-			max-width: 400px;
-			margin: 2em auto;
-			text-align: center;
-			line-height: 1.5;
-		}
+			.container {
+				max-width: 400px;
+				margin: 2em auto;
+				text-align: center;
+				line-height: 1.5;
+			}
 
-		h1 {
-			margin: 1em auto;
-		}
+			h1 {
+				margin: 1em auto;
+			}
 
-		a {
-			text-decoration: none;
-			color: pink;
-			font-weight: 700;
-		}
+			a {
+				text-decoration: none;
+				color: pink;
+				font-weight: 700;
+			}
 
-		span.red {
-			color: red;
-			font-weight: 700;
-		}
+			span.red {
+				color: red;
+				font-weight: 700;
+			}
 
-		span.blue {
-			color: blue;
-			font-weight: 700;
-		}
+			span.blue {
+				color: blue;
+				font-weight: 700;
+			}
 
-		span.pink {
-			color: pink;
-		}
+			span.pink {
+				color: pink;
+			}
 
-		.button {
-			width: 90px;
-			height: 15px;
-			border-radius: 5px;
-			padding: 5px;
-			margin: 0 auto;
+			.button {
+				width: 90px;
+				height: 15px;
+				border-radius: 5px;
+				padding: 5px;
+				margin: 0 auto;
 
-			cursor: pointer;
-			text-align: center;
+				cursor: pointer;
+				text-align: center;
 
-			background-color: pink;
-			font-size: 13px;
-			color: #fff;
-		}
+				background-color: pink;
+				font-size: 13px;
+				color: #fff;
+			}
 
-		.tic-tac-toe {
-			width: 315px;
-			height: auto;
-			margin: 0 auto;
+			.tic-tac-toe {
+				width: 315px;
+				height: auto;
+				margin: 0 auto;
 
-		}
+			}
 
-		.tile {
-			height: 100px;
-			width: 100px;
-			display: inline-block;
-			cursor: pointer;
+			.tile {
+				height: 100px;
+				width: 100px;
+				display: inline-block;
+				cursor: pointer;
 
-			position: relative;
-			vertical-align: top;
+				position: relative;
+				vertical-align: top;
 
-			padding: 15px;
-			margin-bottom: 5px;
-			box-sizing: border-box;
+				padding: 15px;
+				margin-bottom: 5px;
+				box-sizing: border-box;
 
-			color: #fff;
-			font-size: 60px;
-			text-align: center;
-		}
+				color: #fff;
+				font-size: 60px;
+				text-align: center;
+			}
 
-		.free {
-			background-color: #999;
-		}
-
-
-		.O-play {
-			background-color: blue;
-		}
-
-		.X-play {
-			background-color: red;
-		}
-	</style>
-</head>
-<body>
+			.free {
+				background-color: #999;
+			}
 
 
-	<div class="container">
+			.O-play {
+				background-color: blue;
+			}
 
-		<h1>Tic Tac Toe</h1>
+			.X-play {
+				background-color: red;
+			}
+		</style>
+	</head>
 
-		<p>A simple game of tic tac toe to play<br/>
-			You play as <span class="red">X</span> and the computer plays as <span class="blue">O</span><br/>
-			Start by choosing a square to play</p>
-
-
-		<div class="button" id="reset-button">Reset Board</div>
-
-	</div>
-
-	<div class="tic-tac-toe">
-		<div id="square1" class="tile free"></div>
-		<div id="square2" class="tile free"></div>
-		<div id="square3" class="tile free"></div>
-		<div id="square4" class="tile free"></div>
-		<div id="square5" class="tile free"></div>
-		<div id="square6" class="tile free"></div>
-		<div id="square7" class="tile free"></div>
-		<div id="square8" class="tile free"></div>
-		<div id="square9" class="tile free"></div>
-	</div>
-
-	<footer class="container">Made with <span class="pink">&#9829</span> by <a href="http://www.ireaderinokun.com">Ire Aderinokun</a><footer>
+	<body>
 
 
-</body>
+		<div class="container">
+
+			<h1>Tic Tac Toe</h1>
+
+			<p>A simple game of tic tac toe to play<br />
+				You play as <span class="red">X</span> and the computer plays as <span class="blue">O</span><br />
+				Start by choosing a square to play</p>
+
+			<p>You: <div style="font-size: 18px; color: firebrick;" class="score_player"></div>
+			</p>
+			<p>Draw: <div style="font-size: 18px; color: firebrick;" class="draws"></div>
+			</p>
+			<p>Computer: <div style="font-size: 18px; color: firebrick;" class="score_computer"></div>
+			</p>
+			<div class="button" id="reset-button">Reset Board</div>
+			<div class="button" id="reset-score" style="margin-top: 10px; background-color: darkslategray;">Reset Scores</div>
+
+		</div>
+
+		<div class="tic-tac-toe">
+			<div id="square1" class="tile free"></div>
+			<div id="square2" class="tile free"></div>
+			<div id="square3" class="tile free"></div>
+			<div id="square4" class="tile free"></div>
+			<div id="square5" class="tile free"></div>
+			<div id="square6" class="tile free"></div>
+			<div id="square7" class="tile free"></div>
+			<div id="square8" class="tile free"></div>
+			<div id="square9" class="tile free"></div>
+		</div>
+
+		<footer class="container">Made with <span class="pink">&#9829</span> by <a href="http://www.ireaderinokun.com">Ire
+				Aderinokun</a>
+			<footer>
+
+
+	</body>
+
 </html>
